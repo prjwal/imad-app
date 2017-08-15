@@ -4,9 +4,49 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var article-one={
+title:'prajawal s first article',
+heading:'iiit',
+date:'aug 15,2017',
+content:`frsher s is coming..........we have our freshers on 19 th august 
+today is 71 st independence day.....happy independence day to all`
+};
+function createtemplate(data){
+var title=data.title;
+var date=data.date;
+var heading=data.heading;
+var content-data.content; 
 
+var htmltemplate=`
+<html>
+<head>
+<title>
+${title}
+</title>
+<meta name="viewport" content="width-device-width, initial-scale=1"/>
+<link href="/ui/style.css"rel="stylesheet"/>
+
+</head>
+<body>
+<div class="container">
+<div>
+<a href="/">home</a>
+</div>
+<hr/>
+<h2>
+${heading}
+</h2>
+<div>
+${date}
+</div>
+<div>
+${content}
+</div>
+</html>`;
+return htmltemplate;
+}
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.send(path.join(createtemplate(article-one));
 });
 app.get('/article-one', function (req, res){
 res.sendfile(path.join(__dirname,'ui','article-one.html'));
