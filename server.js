@@ -24,7 +24,7 @@ var htmltemplate=`
 ${title}
 </title>
 <meta name="viewport" content="width-device-width, initial-scale=1"/>
-<link href="/ui/style.css"rel="stylesheet"/>
+
 
 </head>
 <body>
@@ -46,7 +46,7 @@ ${content}
 return htmltemplate;
 }
 app.get('/', function (req, res) {
-  res.send(path.join(createtemplate(article-one));
+  res.send(createtemplate(article-one));
 });
 app.get('/article-one', function (req, res){
 res.sendfile(path.join(__dirname,'ui','article-one.html'));
